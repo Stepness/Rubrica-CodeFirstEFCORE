@@ -5,20 +5,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PlayGround_Dependency_Injection.Models;
 
 namespace PlayGround_Dependency_Injection.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IRubricaServices servizi;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IRubricaServices serv)
         {
-            _logger = logger;
+            servizi = serv;
         }
 
         public IActionResult Index()
         {
+            List<ViewModelHome> contattiHome = new List<ViewModelHome>();
+            contattiHome = servizi.ottieniHome();
+            foreach (ViewModelHome contatto in contattiHome)
+            {   
+            }
             return View();
         }
 

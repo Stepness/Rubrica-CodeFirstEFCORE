@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace PlayGround_Dependency_Injection.Models
 {
     public class Servizi : IRubricaServices
@@ -7,8 +9,9 @@ namespace PlayGround_Dependency_Injection.Models
             throw new System.NotImplementedException();
         }
 
-        public ViewModelHome ottieniHome()
+        public List<ViewModelHome> ottieniHome()
         {
+            //scorri il database e carica in una lista
             throw new System.NotImplementedException();
         }
     }
