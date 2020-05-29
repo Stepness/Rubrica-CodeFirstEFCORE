@@ -11,17 +11,9 @@ namespace PlayGround_Dependency_Injection.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IRubricaServices servizi;
-
-        public HomeController(IRubricaServices serv)
-        {
-            servizi = serv;
-        }
 
         public IActionResult Index()
         {
-            List<ViewModelHome> contattiHome = new List<ViewModelHome>();
-            contattiHome = servizi.ottieniHome();
             return View();
         }
     }
