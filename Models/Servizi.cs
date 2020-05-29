@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 
 namespace PlayGround_Dependency_Injection.Models
 {
@@ -11,7 +12,6 @@ namespace PlayGround_Dependency_Injection.Models
 
         public List<ViewModelHome> ottieniHome()
         {
-            //scorri il database e carica in una lista
             throw new System.NotImplementedException();
         }
     }

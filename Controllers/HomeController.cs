@@ -22,11 +22,7 @@ namespace PlayGround_Dependency_Injection.Controllers
         {
             List<ViewModelHome> contattiHome = new List<ViewModelHome>();
             contattiHome = servizi.ottieniHome();
-            foreach (ViewModelHome contatto in contattiHome)
-            {   
-            }
             return View();
         }
-
     }
 }
