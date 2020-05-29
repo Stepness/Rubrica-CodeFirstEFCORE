@@ -103,7 +103,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "3.1.4"
         },
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -5080,7 +5080,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore >= 3.1.4",
-      "Microsoft.EntityFrameworkCore.Design >= 3.1.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.4",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.4",
       "System.Data.SqlClient >= 4.8.1"
@@ -5093,11 +5092,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Refactor\\PlayGround_Dependency_Injection\\PlayGround_Dependency_Injection.csproj",
+      "projectUniqueName": "c:\\Users\\User\\Desktop\\Refactor\\PlayGround_Dependency_Injection\\PlayGround_Dependency_Injection.csproj",
       "projectName": "PlayGround_Dependency_Injection",
-      "projectPath": "C:\\Users\\User\\Desktop\\Refactor\\PlayGround_Dependency_Injection\\PlayGround_Dependency_Injection.csproj",
+      "projectPath": "c:\\Users\\User\\Desktop\\Refactor\\PlayGround_Dependency_Injection\\PlayGround_Dependency_Injection.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Refactor\\PlayGround_Dependency_Injection\\obj\\",
+      "outputPath": "c:\\Users\\User\\Desktop\\Refactor\\PlayGround_Dependency_Injection\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5128,12 +5127,6 @@
       "netcoreapp3.1": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[3.1.4, )"
-          },
-          "Microsoft.EntityFrameworkCore.Design": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
             "target": "Package",
             "version": "[3.1.4, )"
           },
