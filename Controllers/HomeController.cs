@@ -20,7 +20,16 @@ namespace PlayGround_Dependency_Injection.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Contatto contatto = new Contatto();
+            using (var _context = new RubricaDBContext())
+            {
+                contatto.nome = "Egmonte";
+
+                _context.contatti.Add(contatto);
+
+                _context.SaveChanges();
+            }
+            return View(contatto);
         }
 
         public IActionResult Privacy()

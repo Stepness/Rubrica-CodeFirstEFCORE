@@ -8,7 +8,7 @@ namespace PlayGround_Dependency_Injection.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source =.\sqlexpress; Initial Catalog= RubricaCodeFirst; Integrated Security = True");
+            optionsBuilder.UseSqlServer(@"Data Source =Desktop-EVE; Initial Catalog= RubricaCodeFirst; Integrated Security = True");
         }
     }
 }
