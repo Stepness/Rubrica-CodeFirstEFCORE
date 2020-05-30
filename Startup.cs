@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PlayGround_Dependency_Injection.Models;
+using System.Configuration;
 
 namespace PlayGround_Dependency_Injection
 {
@@ -25,6 +27,11 @@ namespace PlayGround_Dependency_Injection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<RubricaDBContext>(options=>
+            {
+                Configuration.GetConnectionString("Default");
+                options.UseSqlServer(Configuration.GetConnectionString("Default"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

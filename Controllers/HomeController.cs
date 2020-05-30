@@ -12,23 +12,23 @@ namespace PlayGround_Dependency_Injection.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly RubricaDBContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, RubricaDBContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
         {
             Contatto contatto = new Contatto();
-            using (var _context = new RubricaDBContext())
-            {
-                contatto.nome = "Egmonte";
+           
+            contatto.nome = "Egmonte";
+            _db.contatti.Add(contatto);
 
-                _context.contatti.Add(contatto);
-
-                _context.SaveChanges();
-            }
+            _db.SaveChanges();
+            
             return View(contatto);
         }
 
