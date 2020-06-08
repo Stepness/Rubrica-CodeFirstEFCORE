@@ -7,34 +7,38 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PlayGround_Dependency_Injection.Models;
 
+
 namespace PlayGround_Dependency_Injection.Controllers
 {
-    public class HomeController : Controller
+    [ApiController]
+    [Route("/api/Home")]
+    public class HomeController : ControllerBase
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly RubricaDBContext _db;
 
-        public HomeController(ILogger<HomeController> logger, RubricaDBContext db)
+        public HomeController(RubricaDBContext db)
         {
-            _logger = logger;
             _db = db;
         }
 
-        public IActionResult Index()
+        //Ritorna un Json di tutti i dati del database ordinati per "Cognome"
+        [HttpGet]
+        public ActionResult Index()
         {
-            Contatto contatto = new Contatto();
-           
-            contatto.nome = "Egmonte";
-            _db.contatti.Add(contatto);
+            ////Crea un contatto di nome "Egmonte" 
+            //Contatto contatto = new Contatto();
+            //contatto.nome = "Egmonte";
+            //_db.contatti.Add(contatto);
+            //_db.SaveChanges();
 
-            _db.SaveChanges();
+            List<Contatto> contatti = new List<Contatto>();
+            foreach (Contatto c in _db.contatti
+                       .OrderBy(x => x.cognome))
+            {
+                contatti.Add(c);
+            }
             
-            return View(contatto);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return Ok(contatti);
         }
     }
 }

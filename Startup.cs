@@ -29,7 +29,7 @@ namespace PlayGround_Dependency_Injection
             services.AddControllersWithViews();
             services.AddDbContext<RubricaDBContext>(options=>
             {
-                Configuration.GetConnectionString("Default");
+                //Configuration.GetConnectionString("Default");
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
         }
